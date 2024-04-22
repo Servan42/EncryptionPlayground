@@ -7,15 +7,19 @@ using System.Text;
 
 internal class Program
 {
-    private static void Main(string[] args)
+    private static async Task Main(string[] args)
     {
         // TODO https://code-maze.com/csharp-string-encryption-decryption/
 
         var sw = Stopwatch.StartNew();
 
-        var caesar = new Caesar("input.txt", "cyph.txt", "decyph.txt");
-        caesar.Encrypt(-10);
-        caesar.Decrypt(-10);
+        //var caesar = new Caesar("input.txt", "cyph.txt", "decyph.txt");
+        //caesar.Encrypt(-10);
+        //caesar.Decrypt(-10);
+
+        var aes = new MyAES("input.txt", "cyph.txt", "decyph.txt");
+        await aes.EncryptAsync("pass");
+        await aes.DecryptAsync("pass");
 
         sw.Stop();
         Console.WriteLine(sw.Elapsed);

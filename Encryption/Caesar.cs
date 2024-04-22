@@ -1,6 +1,6 @@
 ﻿namespace Encryption
 {
-    internal class Caesar(string sourcePath, string encryptedPath, string decryptedPath)
+    public class Caesar(string sourcePath, string encryptedPath, string decryptedPath)
     {
         public void Encrypt(int offset)
         {
